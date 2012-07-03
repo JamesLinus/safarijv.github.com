@@ -1,0 +1,145 @@
+body {
+    padding:0;margin:0;
+    background: white;
+}
+
+.slide {
+    width: 1024px;
+    height: 768px;
+    padding: 30px;
+    margin:0;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    text-shadow:none;
+    z-index: 1;
+    border-radius: none;
+    line-height: 1.2em;
+}
+
+img {
+    max-width: 1024px;
+
+}
+h1 {
+    font-size: 80px;
+    line-height:1em;
+    letter-spacing: -5px;
+}
+h2 {
+    font-size: 60px;
+    padding: 0 50px 2em 50px; 
+    line-height: 1.2em;
+    letter-spacing: -3px;
+}
+h3 {
+    padding: 0 50px 2em 50px; 
+}
+
+p {
+    padding: 50px;
+    line-height: 1.2em;
+}
+ol, ul {
+    padding: 0 50px;    
+    line-height: 1.2em;
+}
+
+.workflow ol {
+    list-style: decimal;
+}
+.workflow .arrow {
+    display: block;
+    font-size: 5em;
+    -webkit-transform:rotate(45deg);
+    position:absolute;
+    margin-top: 50px;
+    color: lightgray;
+}
+li {
+    margin: .5em 0 0 20px;
+    text-indent: -20px;
+}
+
+pre {
+    font-size: 28px;
+    font-family: courier;
+}
+
+.nopadding {
+    padding:0;
+}
+.nopadding img {
+    display: block;
+    margin:auto;
+}
+.warning {
+    color: rgb(179, 35, 23);  /* Horrific red anachronism */
+    text-align: center;
+}
+
+a { 
+    text-shadow:none;
+    color: rgb(0, 70, 127); /* Dark blue background */
+    background: none;
+}
+
+blockquote {
+
+}
+blockquote img {
+    vertical-align: middle;
+    float:left;
+    clear:left;
+    margin: 0 30px;
+    
+}
+
+.browser {
+    background: url(images/chrome-logo.png) no-repeat 0 50px;
+    opacity: 0.2;
+    -webkit-transform: scale(2);
+    position:absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.epub {
+    background: url(images/epub-logo.png) no-repeat 20px 20px;
+    opacity: 0.2;
+    -webkit-transform: scale(2);
+    position:absolute;
+    width: 200px;
+    height: 200px;
+
+}
+
+.bubbles {
+   position:relative;
+   padding:10px;
+   color:#000;
+   background:rgb(214, 227, 240);
+   text-shadow: 1px 1px 1px #f8f8f8;
+   width: 800px;
+
+   min-height: 300px;
+
+   /* css3 */
+   border-radius:50px;
+   background:linear-gradient(top, #f0f0f0, #8a8a8a); 
+   background:-moz-linear-gradient(top, #f0f0f0, #8a8a8a);
+
+}
+
+.bubbles:after {
+   content:"\00a0";
+   display:block; /* reduce the damage in FF3.0 */
+   position:absolute;
+   bottom:-50px;
+   left:50px;
+   width:0;
+   height:0;
+   border-width:50px 50px 0;
+   border-style:solid;
+   border-color:rgb(214, 227, 240) transparent;
+}

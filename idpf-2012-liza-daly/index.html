@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<!--
+The ebook industry as we've known it has been a rough analog to the
+printed book industry, where discrete packaged copies are produced by
+publishers and sold to individuals for mostly-solitary consumption by
+distributors. HTML5 & EPUB 3 can enrich this ecosystem, but enable
+much more: information-dense, responsive publications that can be
+personalized and delivered on request in the appropriate display size,
+language, and educational level, with contextually-relevant media and
+assistive enhancements. This talk presents a vision of EPUB 3 as the
+ultimate publication master format: manuscript, asset management
+system, learning tool, and data warehouse all in one. Example
+publications using streaming HTML5 distribution and EPUB 3 features
+will be provided throughout. 
+--> 
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Streaming Digital Books</title>
+    
+    <meta name="description" content="Streaming Digital Books: IDPF/BEA 2012" />
+    <meta name="author" content="Liza Daly" />
+
+<!--
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+-->
+
+    <link href="impress.js/css/impress-demo.css" rel="stylesheet" /> 
+    <link href="demo.css" rel="stylesheet" /> 
+    
+    <link rel="shortcut icon" href="impress.js/favicon.png" />
+    <link rel="apple-touch-icon" href="impress.js/apple-touch-icon.png" />
+    <link href="print.css" rel="stylesheet" /> 
+
+</head>
+
+<body>
+
+<div id="impress">
+
+    <div id="streaming" class="step slide">
+      <h1 style="color: black;margin: 1em 0 0 0;">Streaming Digital Books</h1>
+      <h2 style="padding:0;">Liza Daly · <a href="http://twitter.com/liza">@liza</a></h2>
+      <img style="position:absolute;bottom:50px;right:10px" src="images/logo.png" alt="Safari Books Online" />
+    </div>
+
+
+    <div class="step slide" data-y="600">
+      <p style="font-size: 50px;margin-top: 2em;">
+        EPUB defines a means of packaging content “for distribution in a<br/> <b>single-file format</b>.”
+      </p>
+    </div>
+
+
+    <div class="step slide" data-y="800" data-scale=".5">
+      <!--
+        There are a lot of great things about files:
+        -->
+      <ol style="font-size: 50px;margin:2em 0 0 0;">
+        <li> Files are portable. </li>
+        <li> Files can be bound together in containers.</li>
+        <li> Files can be endlessly reproduced.</li>
+      </ol>
+    </div>
+
+    <div class="step slide" data-y="1000" data-x="-700" style="width:500px">
+      <p style="margin-top: 8em">(If you’re a publisher, <br/>maybe you don’t really<br/> like files so much.)</p>
+    </div>
+
+    <div class="step slide" data-y="3000" style="background:url(images/book-factory.jpg) no-repeat 0 420px">
+      <p style="color: black;">
+      An explicit goal of the EPUB format is that the same file that
+      leaves the publisher's "book factory" is the one that ends up in
+      consumers' hands. <strong>I don't think this is always a feature.</strong> 
+      </p>
+      <p style="font-size:20px">
+        <img style="vertical-align: middle" src="images/by.png" alt="By" /> <a href="http://www.flickr.com/photos/bibliodyssey/">peacay</a>
+      </p>
+    </div>
+
+    <div class="step slide" data-y="5000">
+      <p>Why does this need to be true?</p>
+    </div>
+
+    <div class="step slide" data-y="5000" data-x="1024">
+
+      <p style="margin-top: 4em">What if we stop thinking about the ebook as being primarily about the <strong>package</strong> and more about its <strong>manifest</strong>?</p>
+    </div>
+
+    <div class="step slide" data-y="5000" data-x="2048">
+      <p style="margin-top: 8em">The ebook package doesn't have to be the book itself. It's a set of instructions on how to build the ebook. It's a <b>recipe</b>.</p>
+    </div>
+
+    <div class="step slide" data-y="8000" style="background:url(images/recipes.jpg) no-repeat">
+
+    </div>
+
+    <div class="step slide" data-y="8768" style="background:url(images/recipes.jpg) no-repeat 0 -768px;">
+
+      <h2>Ingredients</h2>
+      <ol style="margin-top: 4em;color: black">
+        <li> Images</li>
+        <li> Spoken tracks</li>
+        <li> Alternate language version</li>
+        <li> Simplified summary</li>
+        <li> HTML5/CSS3 markup and styling</li>
+      </ol>
+    </div>
+
+    <div class="step slide" data-y="8768" data-x="-1000">
+
+      <ol style="margin-top: 4em;color: black">
+        <li> <em>Do you want images?</em> <br/>How big? </li>
+        <li> <em>I have some audio.</em><br/>Would you like to hear it? What formats can you use?</li>
+        <li> <em>Do you want it to be synchronized with the text </em><br/> or just play it by itself?</li>
+        <li> This is a new edition. <em>Do you want to review the changes</em><br/> or just read the new version?</li>
+        <li> <em>Do you speak Spanish?</em> Do you speak both English and Spanish? Are you learning Spanish?</li>
+        <li> This is a difficult topic. <em>Do you want the easy version first</em>?</li>
+        <li> <em>Is your ereader old or new?</em></li>
+      </ol>
+
+    </div>
+
+
+    <div class="workflow step slide" data-y="8768" data-x="1000">
+      <h2>A gentler workflow</h2>
+      <ol style="font-size: 40px;margin-left: 50px">
+        <li>Ebook "manuscript"
+        <span class="arrow" style="left: 300px;"> ⤑</span>
+        </li>
+        <li style="margin: 4em 0 0 4em"> Content negotiation
+        <span class="arrow" style="left: 500px;"> ⤑</span>
+        </li>
+        
+        <li style="margin: 4em 0 0 10em">Streaming book</li>
+      </ol>
+    </div>
+
+    <div class="step slide" data-y="8768" data-x="2000" style="background: url(images/kitchen-sears.jpg) no-repeat">
+      <p style="position:absolute;bottom:1.5em;padding:0; color: black; font-size: 40px;text-align:center; margin:auto;width:100%">
+        1. Take everything we know about the book. <br/>Package it in an EPUB. 
+      </p>
+    </div>      
+
+
+
+    <div class="step slide" data-y="17000">
+      <h2>2. Content negotation.</h2>
+
+      <div class="bubbles" style="margin: 100px 0 0 0">
+        <br/>
+        <blockquote>
+          <img src="images/chrome-logo.png" alt="Chrome logo"/> “I'd like French most, but I'll also accept English as a fallback.”
+        </blockquote>
+        <blockquote style="margin-top: 3em;">
+          <img src="images/apache-logo.gif" alt="Apache logo"/> <i>«Trés bien.»</i>
+        </blockquote>
+        
+      </div>
+    </div>
+
+    <div class="step slide" data-y="17000" data-x="1000">
+      <h2>HTTP as she is spoken</h2>
+      <!-- List the range of accepted values, with an optional quality or weight parameter. -->
+      <div class="browser"></div>
+      <pre style="margin-top: 5em">
+        Accept-Language: de; q=1.0, en; q=0.5
+        Accept: text/html; q=1.0, text/*; q=0.8, 
+                image/gif; q=0.6, image/jpeg; q=0.6, 
+                image/*; q=0.5, */*; q=0.1
+      </pre>
+      <!-- Other options in HTTP include Accept-Charset, which here must be UTF-8 per the
+           EPUB spec for our purposes, and Accept-Enconding, which is typically a
+           compression mechanism. Obviously for us that's implicitly ZIP and can be skipped.
+      -->
+    </div>
+
+    <div class="step slide" data-y="17000" data-x="2000">
+      <h2>Negotiate first at the<br/> document level</h2>
+      <div class="epub"></div>
+      <pre style="margin-top: 5em">
+        Accept: application/xml+epub3,
+                application/xml+epub, 
+                text/plain,
+                application/pdf
+      </pre>
+    </div>
+
+
+    <div class="step slide" data-y="17000" data-x="3000">
+      <h2>...then talk about content types</h2>
+      <!-- We can look at this as a way to do EPUB 2-style fallback choices...-->
+      <div class="epub"></div>
+      <pre style="margin-top: 5em">
+        Accept-Language: fr, en
+        Accept: application/xml+mathml,
+                application/xml+svg,
+                application/xml+html
+      </pre>
+    </div>
+    <div class="step slide" data-y="17000" data-x="4000">
+      <h2>Mapping to rendition selection in EPUB 3 fixed-layout?</h2>
+      <div class="epub"></div>
+      <p>
+        <a href="http://idpf.org/epub/fxl/">Fixed-layout informational document: http://idpf.org/epub/fxl/</a>
+      </p>
+      <pre>   Accept-Rendition:
+         layout,      // I can render spreads!
+         orientation  // My orientation can change
+      </pre>
+      <p class="warning">
+        (This doesn't exist. I made it up. It's just an idea.)
+      </p>
+    </div>
+
+    <div class="step slide" data-y="18000">
+      <h2>3. Streaming book</h2>
+      <p>
+        Just what the reader wants, as fast as possible.
+      </p>
+    </div>
+
+    <div class="step slide" data-y="11000" style="background: url(images/mockingbird3.jpg) no-repeat -80px 0">
+      <h2 style="padding-bottom:0">Warning: EPUB abuse.</h2> 
+      <p>
+        Supporting legacy content through mockingbird.
+      </p>
+
+      <p style="position: absolute; bottom: 0px">
+        <img src="images/by.png" alt="By" style="vertical-align:middle" /><a href="http://www.flickr.com/photos/manjithkaini/3621308888/">Manjith Kainickara</a>
+      </p>
+    </div>
+
+    <div class="step slide" data-y="11000" data-x="1000" style="background:url(images/rooster-man.png) no-repeat -50px 140px">
+      <p>
+        Mockingbird converts PDFs into an EPUB <em>container</em>
+        (not an EPUB!)
+      </p>
+    </div>
+
+    <div class="step slide" data-y="11000"  data-x="2000" >
+      <h2>
+        What does mockingbird know about a book?
+      </h2>
+      <ul style="margin-top: 2em">
+        <li> What the pages look like.</li>
+        <li> The extractable text from the PDF.</li>
+        <li> The PDF's table of contents.</li>
+        <li> External metadata.</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-y="11000"  data-x="3000" style="background: black;">
+      <p style="color: white">
+        Injected full text for search.
+      </p>
+      <img src="images/page-contents.png" alt="The PDF enhanced with searchable page text" />
+    </div>
+
+    <div class="step slide nopadding" data-y="16000">
+      <img src="images/pdf-bookle.png" alt="The PDF converted into an image-based EPUB" />
+    </div>
+
+    <div class="step slide" data-y="16000" data-x="1000">
+      <pre>
+&lt;container xmlns="urn:oasis..." version="1.0"&gt;
+  &lt;rootfiles&gt;
+    &lt;rootfile full-path="OEBPS/content.opf" 
+              media-type="application/oebps-package+xml"/&gt;
+
+    <b>&lt;rootfile full-path="OEBPS/rich-metadata.pdf" 
+              media-type="application/pdf"/&gt;</b>
+
+  &lt;/rootfiles&gt;
+&lt;/container&gt;
+      </pre>
+      <p class="warning">
+        (This syntax is deprecated.)
+      </p>
+    </div>
+
+
+    <div class="step slide nopadding" data-y="16000" data-x="2000">
+      <img src="images/pdf-nozoom.png" alt="The PDF rendered via HTML5 canvas" />
+    </div>
+
+    <div class="step slide nopadding" data-y="16000" data-x="3000">
+      <img src="images/pdf-zoom.png" alt="Zooming the PDF with canvas renders type beautifully" />
+    </div>
+
+    <div class="step slide nopadding" data-y="16000" data-x="4000">
+      <p>
+        Video too...
+      </p>
+    </div>
+
+
+    <div class="step slide" data-y="20000">
+      <h2>What do we get out of a streaming/manuscript model?</h2>
+    </div>
+
+    <div class="step slide" data-y="20000" data-x="1000">
+      <h2>Intelligent rights management</h2>
+      <ul>
+        <li>Control over portability</li>
+        <!-- Allow users to take subsets of the content with them, but not all of it:
+             * Students can keep the quiz, but not the textbook...
+             * ...or the textbook but not the quiz
+        -->
+        <li>Timed revocation</li>
+        <!-- In Safari we provide access as long as you're a subscriber. We can control that even when offline. -->
+        <li>Granular rights management</li>
+        <!-- Multimedia supplements can be available on a limited basis while still making the content perpetually-available -->
+      </ul>
+    </div>
+
+    <div class="step slide" data-y="20000" data-x="2000">
+      <h2>Responsive asset management</h2>
+      <ul>
+        <li>Future-proof images</li>
+        <!-- How many of you are worried about providing retina assets? Are you even able to due to file size restrictions? -->
+        <li>Single-format media</li>
+        <!-- Most media types can be automatically transcoded if starting from a high-quality master format.
+             It would be great if the ebook community were immune to the quabbles of the larger web companies.
+             -->
+        <li>Multipurpose titles</li>
+        <!-- Reuse content for a variety of markets and use cases; royalties are managed through contracts,
+        not by what goes into a zip file -->
+        <li>Supplementary glossaries, dictionaries, indexes</li>
+        <!-- Bundling large reference material along with the title becomes feasible; providing a complete dictionary,
+        concordance, etc. along with the title is trivial and can be accessed when necessary -->
+      </ul>
+    </div>
+
+    <div class="step slide" data-y="20000" data-x="3000">    
+      <h2>
+        Flaws in the current model:
+      </h2>
+      <ul>
+        <li> Retailers and ereaders aren't actually required to follow the spec.</li>
+        <!-- If you've seen the BISG chart you might be surprised by the number of 'yes'es -->
+        <li> Additional restrictions are allowed.</li>
+        <!-- But the most critical problem is that any retailer is free to impose additional 
+        restrictions that the spec doesn't address, like file size. Doing so has an immediate
+        ripple effect on the community, forcing publishers to either produce files that map to
+        an ever-changing least common denominator, OR producing multiple effectively-identical files per channel.
+        -->
+        <li>Responsive design can be resource-wasteful.</li>
+        <!-- After some initial enthusiasm, the web community is coming to realize that many of the 
+        principle technologies in media-query and other responsive design techniques require 
+        the transmission of large amounts of data that are never used. This is even more problematic
+        for ebooks, which are frozen at distribution time and downloaded wholesale to small devices. -->
+      </ul>
+    </div>
+
+    <div class="step slide" data-y="20000" data-x="4000">    
+      <img src="images/responsive-images.png" alt="Screenshot from the W3C Responsive Images Community Group" />
+    </div>
+
+    <div class="step slide" data-y="20000">    
+      <h2>TODOs</h2>
+      <ul>
+        <li>An "EPUB" should be an API endpoint, not only a file</li>
+        <li>Worked examples with content negotiation</li>
+        <li>More streaming business models</li>
+      </ul>
+    </div>
+
+
+    <div class="step slide" data-y="25000">
+      <h2>Credits</h2>
+      <ul style="font-size: 20px">
+        <li><a href="http://archive.org/stream/cookeryrecipes00stmaiala#page/100/mode/1up">http://archive.org/stream/cookeryrecipes00stmaiala#page/100/mode/1up</a></li>
+        <li><a href="http://archive.org/stream/cannedsalmonreci00alas#page/8/mode/1up">http://archive.org/stream/cannedsalmonreci00alas#page/8/mode/1up</a></li>
+        <li>
+          <img width="30" style="vertical-align: middle" src="images/by.png" alt="By" /> <a href="http://www.flickr.com/photos/bibliodyssey/">peacay</a></li>
+          <li><img width="30" src="images/by.png" alt="By" style="vertical-align:middle" /><a href="http://www.flickr.com/photos/manjithkaini/3621308888/">Manjith Kainickara</a>
+          </li>
+      </ul>
+      <h3 style="margin-top: 200px">Liza Daly  · <a href="http://twitter.com/liza">@liza</a>  · liza@safaribooksonline.com</h3>
+      <img style="position:absolute;bottom:50px;right:10px" src="images/logo.png" alt="Safari Books Online" />
+    </div>
+
+
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="impress.js/js/impress.js"></script>
+<script>impress().init();</script>
+
+
+
+</body>
+</html>
