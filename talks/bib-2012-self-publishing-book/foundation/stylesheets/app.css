@@ -13,33 +13,38 @@
    Shared Styles
 ----------------------------------------- */
 .row {
-  margin-bottom:1em;
-  position:relative;
+  position: relative;
   border-bottom: 1px solid #CCC;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
 }
 
 
-.row .comments {
-    overflow: scroll;
-    position: absolute;
-    width:24%;
-    height:95%;
+.tweets,
+.comments {
+  overflow: scroll;
+  position: absolute;
+  width: 24%;
+  height: 100%;
+  padding-top: 30px;
+}
+.comments {
+  left: 0;
+}
+.tweets {
+  right: 0;
 }
 
 
-.row .slide {
-    margin-left:25%;
+.slide {
+  padding-top: 25px;
+  margin-left: 25%;
 }
 .slide h2 {
-  margin-top:0;
+  margin-top: 0;
+}
+.slide p {
+  font-size: 1.2em;
 }
 
-
-.tweets {
-  padding:0;
-}
 .tweets p {
   -webkit-box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
   -moz-box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
@@ -48,23 +53,23 @@
   -moz-border-radius: 6px;
   border-radius: 6px;
   border: 1px solid #C8C8C8;
-  padding:10px 10px 10px 70px;
-  position:relative;
-  min-height:70px;
+  padding: 10px 10px 10px 70px;
+  position: relative;
+  min-height: 70px;
 }
 .tweet-text {
   text-shadow: #CCC -3px 2px 6px;
 }
 .tweet-when {
-  display:block;
-  margin:1em 0 0;
-  font-size:10px;
-  color:#333;
+  display: block;
+  margin: 1em 0 0;
+  font-size: .65em;
+  color: #333;
 }
 .tweet-avatar {
-  position:absolute;
-  left:10px;
-  top:10px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 /* -----------------------------------------
@@ -76,5 +81,32 @@
 /* -----------------------------------------
    Page Name 2
 ----------------------------------------- */
-
-
+.top-gradient,
+.bottom-gradient {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  height: 30px;
+}
+.top-gradient {
+  top: 0;
+  background: url(data:image/svg+xml;base64,alotofcodehere);
+  background: -moz-linear-gradient(bottom,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,rgba(255,255,255,0)), color-stop(70%,rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+  background: -o-linear-gradient(bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+  background: -ms-linear-gradient(bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+  background: linear-gradient(to top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+}
+.bottom-gradient {
+  bottom: 0;
+  background: url(data:image/svg+xml;base64,alotofcodehere);
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(70%,rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+  background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+}
