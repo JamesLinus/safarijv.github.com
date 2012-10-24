@@ -7,7 +7,9 @@
 :: Page Name 1
 :: Page Name 2
 */
-
+.slide * {
+	font-family: 'Lato', Times, 'Times New Roman', serif;
+}
 
 /* -----------------------------------------
    Shared Styles
