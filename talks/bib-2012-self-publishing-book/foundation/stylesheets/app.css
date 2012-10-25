@@ -77,7 +77,7 @@
 .tweet-who-at {
   display:block;
 }
-.tweet .iframe {
+.tweet iframe {
   width: 65px;
   height: 20px;
   position: absolute;
