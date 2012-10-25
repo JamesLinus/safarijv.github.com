@@ -7,7 +7,7 @@
 :: Page Name 1
 :: Page Name 2
 */
-.slide * {
+.slide, .slide * {
 	font-family: 'Lato', Times, 'Times New Roman', serif;
 }
 
@@ -44,8 +44,10 @@
   margin-top: 0;
 }
 .slide p {
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
+
+
 .tweets {
   padding-bottom:1em;
 }
@@ -92,7 +94,6 @@
   text-shadow: #CCC -3px 2px 6px;
   display: block;
   margin: 10px 0 0 0;
-  font-size: .9em;
   word-wrap: break-word;
 }
 
