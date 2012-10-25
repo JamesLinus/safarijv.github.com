@@ -55,12 +55,9 @@
   -moz-border-radius: 6px;
   border-radius: 6px;
   border: 1px solid #C8C8C8;
-  padding: 10px 10px 10px 70px;
+  padding: 10px 10px 10px 10px;
   position: relative;
-  min-height: 70px;
-}
-.tweet-text {
-  text-shadow: #CCC -3px 2px 6px;
+  min-height: 95px;
 }
 .tweet-when {
   display: block;
@@ -73,18 +70,28 @@
   left: 10px;
   top: 10px;
 }
+.tweet-avatar img {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
 .tweet-who,
 .tweet-who-at {
   display:block;
+  margin-left: 60px;
 }
 .tweet iframe {
-  width: 65px;
-  height: 20px;
-  position: absolute;
-  left: 4px;
-  top: 65px;
+  width: 65px !important;
+  float: left;
+  margin: 8px 0 0 -5px;
 }
-
+.tweet-text {
+  text-shadow: #CCC -3px 2px 6px;
+  display: block;
+  margin: 35px 0 0 0;
+  /* font-size: .9em;*/
+  word-wrap: break-word;
+}
 
 /* -----------------------------------------
    Page Name 1
