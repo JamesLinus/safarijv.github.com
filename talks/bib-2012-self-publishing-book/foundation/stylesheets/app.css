@@ -73,6 +73,18 @@
   left: 10px;
   top: 10px;
 }
+.tweet-who,
+.tweet-who-at {
+  display:block;
+}
+.tweet iframe {
+  width: 65px;
+  height: 20px;
+  position: absolute;
+  left: 4px;
+  top: 65px;
+}
+
 
 /* -----------------------------------------
    Page Name 1
