@@ -46,11 +46,10 @@
 .slide p {
   font-size: 1.2em;
 }
-
+.tweets {
+  padding-bottom:1em;
+}
 .tweets p {
-  -webkit-box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
-  -moz-box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
-  box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -58,6 +57,9 @@
   padding: 10px 10px 10px 10px;
   position: relative;
   min-height: 95px;
+  -webkit-box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
+  -moz-box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
+  box-shadow: 0px 5px 25px rgba(0,0,0,0.20);
 }
 .tweet-when {
   display: block;
@@ -66,9 +68,7 @@
   color: #333;
 }
 .tweet-avatar {
-  position: absolute;
-  left: 10px;
-  top: 10px;
+  float:left;
 }
 .tweet-avatar img {
   -webkit-border-radius: 6px;
@@ -80,27 +80,25 @@
   display:block;
   margin-left: 60px;
 }
+.tweet-who-at {
+  font-size:.9em;
+}
 .tweet iframe {
   width: 65px !important;
-  float: left;
-  margin: 8px 0 0 -5px;
+  display: block;
+  margin: 8px 0 0 -4px;
 }
 .tweet-text {
   text-shadow: #CCC -3px 2px 6px;
   display: block;
-  margin: 35px 0 0 0;
-  /* font-size: .9em;*/
+  margin: 10px 0 0 0;
+  font-size: .9em;
   word-wrap: break-word;
 }
 
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
 
 /* -----------------------------------------
-   Page Name 2
+   Gradients
 ----------------------------------------- */
 .top-gradient,
 .bottom-gradient {
@@ -130,4 +128,38 @@
   background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
   background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
   background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------
+   Media queries
+----------------------------------------- */
+@media only screen and (max-width: 768px) {
+  .tweets, .comments {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding-top: 30px;
+  }
+  .slide {
+    padding-top: 25px;
+    margin-left: 0;
+  }
+  .top-gradient,
+  .bottom-gradient {
+    display:none;
+  }
+  hr {
+    border-style: dotted;
+  }
+  .tweet-text {
+    font-size:1.2em;
+  }
 }
